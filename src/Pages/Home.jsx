@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="container mx-auto">
       <Navbar />
-      <div className="h-[100vh]">
+      <div>
         <Outlet />
       </div>
       <Footer />
