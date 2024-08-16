@@ -4,15 +4,22 @@ import Products from "../Pages/Products";
 import Contacts from "../Pages/Contacts";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import Root from "../layoute/Root";
 
 export const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home/>,
+      element: <Root/>,
       children:[
         {
+          path:'/',
+          element:<Home/>,
+  
+        },
+        {
             path:'/products',
-            element:<Products/>
+            element:<Products/>,
+            loader: () => fetch("http://localhost:5000/productsCount")
         },
         {
             path:'/contacts',
