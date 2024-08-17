@@ -1,23 +1,23 @@
-import { NavLink } from "react-router-dom";
-import logo from '../../public/Logo.png'
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../public/Logo.png";
 
 const Navbar = () => {
-    const navLinks = (
-        <>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/products">All Products</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contacts">Contact Us</NavLink>
-          </li>
-          <li>
-            <NavLink to="/register">Register</NavLink>
-          </li>
-        </>
-    );
+  const navLinks = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/products">All Products</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contacts">Contact Us</NavLink>
+      </li>
+      <li>
+        <NavLink to="/register">Register</NavLink>
+      </li>
+    </>
+  );
   return (
     <div className="navbar bg-[#9EABA2] rounded-xl">
       <div className="navbar-start">
@@ -45,15 +45,17 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl font-bold text-primary">EASY- <span className="text-secondary">SHOPPING</span></a>
+        <a className=" text-xl font-bold text-primary">
+          EASY- <span className="text-secondary">SHOPPING</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-4 font-bold">
-          {navLinks}
-        </ul>
+        <ul className="menu menu-horizontal px-4 font-bold">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <img className="w-14 rounded-full" src={logo} alt="" />
+        <Link to='/'>
+          <img className="w-14 rounded-full" src={logo} alt="" />
+        </Link>
       </div>
     </div>
   );
