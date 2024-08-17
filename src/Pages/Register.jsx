@@ -34,9 +34,10 @@ const Register = () => {
       <div className="hero min-h-screen bg-base-200 rounded-3xl mb-8">
         <div className="hero-content flex-col">
           <div className="text-center">
-            <h1 className="text-3xl font-bold">Create Your Account!</h1>
+            <h1 className="text-xl lg:text-3xl font-bold">Create Your Account!</h1>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <SocialLogin/>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -100,7 +101,7 @@ const Register = () => {
                 
               </div>
             </form>
-            <div className="mb-4"><SocialLogin/></div>
+           
             {registerError && (
               <p className="text-red-600 text-center mb-2">{registerError}</p>
             )}
