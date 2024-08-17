@@ -4,7 +4,7 @@
 https://github.com/ahsan200t/EASY-SHOPPING-SERVER
 
 ## Live Link:
-https://assignment-12-client-90a98.web.app
+https://easy-shopping-e6c9d.web.app
 
 ## Technologies Used:
 ### Frontend: 
