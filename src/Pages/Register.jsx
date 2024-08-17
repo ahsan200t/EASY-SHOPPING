@@ -1,17 +1,17 @@
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { createContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {  useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import SocialLogin from "../components/SocialLogin";
 
 const Register = () => {
-  const { createUser, setUser } = createContext(AuthContext);
+  const { createUser} = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
   const [registerError, setRegisterError] = useState("");
 
   const navigate = useNavigate();
-  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -22,10 +22,7 @@ const Register = () => {
     createUser(email, password)
       .then(() => {
         toast.success("Successfully Registered")
-       .then(() => {
-          navigate(location?.state || "/");
-          setUser(true);
-        });
+       navigate('/')
       })
       .catch((error) => {
         setRegisterError(error.message);
@@ -100,8 +97,10 @@ const Register = () => {
                     Login
                   </Link>
                 </p>
+                
               </div>
             </form>
+            <div className="mb-4"><SocialLogin/></div>
             {registerError && (
               <p className="text-red-600 text-center mb-2">{registerError}</p>
             )}

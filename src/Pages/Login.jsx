@@ -1,12 +1,13 @@
-import { createContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
+import SocialLogin from "../components/SocialLogin";
 
 
 const Login = () => {
-    const {signInUser, setUser}= createContext(AuthContext);
+    const {signInUser, setUser}= useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const [loginError, setLoginError]=useState("")
@@ -38,6 +39,7 @@ const Login = () => {
               <h1 className="text-3xl font-bold mb-6">Login Your Account!</h1>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+              <SocialLogin/>
               <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                 <div className="form-control">
                   <label className="label">

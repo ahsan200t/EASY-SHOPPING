@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <div>
 
-      <div className="lg:flex justify-between items-center">
+      <div className="p-4 lg:flex justify-between items-center">
         <button
           onClick={() => setAsc(!asc)}
           className="btn btn-wide my-4 bg-red-600 hover:bg-red-700 text-white"
@@ -56,7 +56,7 @@ const Home = () => {
       </div>
       
       <div>
-      <h1 className="text-center text-3xl font-semibold mt-10 border-4 border-gray-500 lg:w-1/3 mx-auto rounded-2xl shadow-2xl">OUR COLLECTIONS</h1>
+      <h1 className="p-4 text-center text-3xl font-semibold mt-10 border-4 border-gray-500 lg:w-1/3 mx-auto rounded-2xl shadow-2xl">OUR COLLECTIONS</h1>
       <div className="p-4 grid grid-cols-1 lg:grid-cols-4 gap-8 mt-4 ">
         {products.map((product) => (
           <ProductCard key={product._id} product={product}></ProductCard>

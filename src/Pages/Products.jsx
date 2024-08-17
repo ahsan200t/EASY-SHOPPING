@@ -3,7 +3,6 @@ import ProductCard from "../components/ProductCard";
 
 const Products = () => {
   const products = useLoaderData();
- console.log(products)
   return (
     <div>
       <h1 className="text-4xl font-semibold text-center my-8 border-b-4 border-red-600 lg:w-1/5 mx-auto">All Products</h1>
