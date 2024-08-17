@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
     CreationDateTime,
     Description,
   } = product;
-  console.log(product);
+  console.log(product)
   return (
     <div className="card card-compact bg-base-100 h-[300px] shadow-xl">
       <figure>
